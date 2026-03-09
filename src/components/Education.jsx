@@ -1,10 +1,5 @@
-import { useReveal } from '../hooks/useReveal'
+import RevealDiv from './RevealDiv'
 import './Education.css'
-
-function RevealDiv({ children, className = '' }) {
-  const ref = useReveal()
-  return <div ref={ref} className={`reveal ${className}`}>{children}</div>
-}
 
 export default function Education() {
   return (

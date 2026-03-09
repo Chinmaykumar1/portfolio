@@ -1,4 +1,4 @@
-import { useReveal } from '../hooks/useReveal'
+import RevealDiv from './RevealDiv'
 import './Achievements.css'
 
 const ACHIEVEMENTS = [
@@ -18,11 +18,6 @@ const ACHIEVEMENTS = [
     desc: 'Scored in the top 1 percentile among 1.2 million+ candidates in one of India\u2019s toughest engineering entrance exams.',
   },
 ]
-
-function RevealDiv({ children, className = '' }) {
-  const ref = useReveal()
-  return <div ref={ref} className={`reveal ${className}`}>{children}</div>
-}
 
 export default function Achievements() {
   return (

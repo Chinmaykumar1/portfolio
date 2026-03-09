@@ -1,4 +1,4 @@
-import { useReveal } from '../hooks/useReveal'
+import RevealDiv from './RevealDiv'
 import './Experience.css'
 
 const EXPERIENCES = [
@@ -32,11 +32,6 @@ const EXPERIENCES = [
     tags: ['Java', 'React', 'Redux', 'PostgreSQL', 'OAuth 2.0', 'Hibernate', 'Playwright'],
   },
 ]
-
-function RevealDiv({ children, className = '' }) {
-  const ref = useReveal()
-  return <div ref={ref} className={`reveal ${className}`}>{children}</div>
-}
 
 export default function Experience() {
   return (

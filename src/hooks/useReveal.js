@@ -11,9 +11,10 @@ export function useReveal() {
       ([entry]) => {
         if (entry.isIntersecting) {
           el.classList.add('visible')
+          observer.unobserve(el)
         }
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.05, rootMargin: '50px 0px 0px 0px' }
     )
 
     observer.observe(el)
