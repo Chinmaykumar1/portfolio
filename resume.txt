@@ -1,0 +1,138 @@
+%-------------------------
+% Resume - Chinmay Kumar
+% FAANG-targeted, realistic metrics
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+\pdfgentounicode=1
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Chinmay Kumar} \\ \vspace{1pt}
+    \small +91 9521024536 $|$
+    \href{mailto:ichinmaykr@gmail.com}{\underline{ichinmaykr@gmail.com}} $|$
+    \href{https://www.linkedin.com/in/chinmay-kumar-a75b9b1b4/}{\underline{linkedin.com/in/chinmay}} $|$
+    \href{https://github.com/Chinmaykumar1}{\underline{github.com/Chinmay}}
+\end{center}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Senior Software Engineer}{Jul 2024 -- Present}
+      {UnitedHealth Group -- Optum}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Developed and maintained \textbf{REST APIs} (GET/POST) in \textbf{Spring Boot} for healthcare claims processing workflows including claim submission, reconsideration, and appeals; improved API response times by \textasciitilde 20\% through query optimization and caching.}
+        \resumeItem{Built a \textbf{customer file upload enhancement} using \textbf{AWS S3 pre-signed URLs}, enabling direct multi-file uploads to S3 buckets -- eliminated server as a file proxy, reducing upload latency by \textasciitilde 40\% and supporting concurrent batch uploads.}
+        \resumeItem{Owned the \textbf{reconciliation (recon) flow} end-to-end: designed scheduled jobs to cross-validate claims data across upstream/downstream systems, identifying and auto-resolving discrepancies in daily transaction batches.}
+        \resumeItem{Managed \textbf{production activity and incident response} -- set up \textbf{Dynatrace} dashboards and alerting for API latency, error rates, and JVM health; reduced mean time to detection (MTTD) for P1 incidents from \textasciitilde 30 min to under 5 min.}
+        \resumeItem{Configured \textbf{CI/CD pipelines} using \textbf{Jenkins} and \textbf{JFrog Artifactory} for artifact management and deployment across dev, QA, staging, and production environments.}
+        \resumeItem{Collaborated with cross-functional teams (product, QA, data engineering) in Agile sprints; participated in design reviews, code reviews, and on-call rotations for production support.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Software Engineer}{Sep 2022 -- Jun 2024}
+      {Accenture}{Bengaluru, India}
+      \resumeItemListStart
+        \resumeItem{Built backend services in \textbf{Java/Spring Boot} with \textbf{Hibernate ORM} for Intuit QuickBooks payroll subscription management; integrated \textbf{REST and SOAP APIs} consumed by web and mobile clients.}
+        \resumeItem{Developed frontend modules using \textbf{React} and \textbf{Redux}; improved page load performance by \textasciitilde 20\% through code splitting and lazy loading.}
+        \resumeItem{Implemented \textbf{OAuth 2.0} authentication and role-based access control for payroll API endpoints; ensured compliance with internal security audits.}
+        \resumeItem{Optimized \textbf{PostgreSQL} queries via indexing, query plan analysis, and table partitioning -- achieved \textasciitilde 25\% improvement in p95 query latency for high-traffic endpoints.}
+        \resumeItem{Wrote integration and unit tests using \textbf{JUnit/Mockito}; set up end-to-end test automation with \textbf{Playwright}; maintained 85\%+ code coverage across services.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {National Institute of Technology Karnataka, Surathkal}{Mangalore, India}
+      {B.Tech -- Ranked 3rd among all NITs (NIRF)}{Aug 2018 -- May 2022}
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Java, JavaScript, TypeScript, Python, SQL} \\
+     \textbf{Frameworks \& Libraries}{: Spring Boot, Spring MVC, Hibernate, React, Redux, Node.js, JUnit, Mockito} \\
+     \textbf{Cloud \& DevOps}{: AWS (S3, EC2, Lambda), Docker, Jenkins, JFrog Artifactory, Dynatrace} \\
+     \textbf{Databases}{: PostgreSQL, MySQL, MongoDB, Redis} \\
+     \textbf{Tools \& Practices}{: Git, Maven, Kafka, REST APIs, GraphQL, Microservices, CI/CD, Agile/Scrum}
+    }}
+ \end{itemize}
+
+
+%-----------ACHIEVEMENTS-----------
+\section{Achievements}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        \resumeItem{Awarded \textbf{ACE Developer Award} at Accenture for delivering high-impact features ahead of schedule.}
+        \resumeItem{\textbf{Rank 1st (Southern Region), 4th Nationwide} in Shell.AI Hackathon -- won \rupee 50,000 prize.}
+        \resumeItem{Top \textbf{1\%} in JEE Main among 1.2M+ candidates.}
+    }}
+ \end{itemize}
+
+%-------------------------------------------
+\end{document}

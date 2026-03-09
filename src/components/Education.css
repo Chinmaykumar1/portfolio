@@ -1,0 +1,28 @@
+.edu-card {
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  background: var(--bg-card);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.edu-info h3 { font-size: 1.35rem; font-weight: 600; margin-bottom: 0.35rem; }
+.edu-info p { color: var(--text-muted); font-size: 0.95rem; }
+
+.edu-badge {
+  padding: 0.6rem 1.5rem;
+  background: var(--accent-dim);
+  border: 1px solid rgba(200, 255, 0, 0.15);
+  border-radius: 100px;
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .edu-card { flex-direction: column; align-items: flex-start; }
+}
