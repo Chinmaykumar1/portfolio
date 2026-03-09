@@ -1,4 +1,4 @@
-import { useReveal } from '../hooks/useReveal'
+import RevealDiv from './RevealDiv'
 import './Skills.css'
 
 const SKILL_GROUPS = [
@@ -23,11 +23,6 @@ const SKILL_GROUPS = [
     items: ['Git', 'Maven', 'Kafka', 'REST APIs', 'GraphQL', 'Microservices', 'CI/CD', 'Agile'],
   },
 ]
-
-function RevealDiv({ children, className = '' }) {
-  const ref = useReveal()
-  return <div ref={ref} className={`reveal ${className}`}>{children}</div>
-}
 
 export default function Skills() {
   return (
