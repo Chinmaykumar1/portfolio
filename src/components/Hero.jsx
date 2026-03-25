@@ -2,6 +2,7 @@ import './Hero.css'
 
 export default function Hero() {
   return (
+    <>
     <section className="hero">
       <div className="hero-orb" />
       <div className="hero-label">// Senior Software Engineer</div>
@@ -30,5 +31,7 @@ export default function Hero() {
         </a>
       </div>
     </section>
+    <div className="hero-divider" />
+  </>
   )
 }

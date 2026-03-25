@@ -10,6 +10,8 @@
   margin: 0 auto 6rem;
   opacity: 0;
   animation: fadeUp 0.8s ease forwards 1s;
+  position: relative;
+  box-shadow: 0 4px 30px rgba(200, 255, 0, 0.04);
 }
 
 .stat-item {

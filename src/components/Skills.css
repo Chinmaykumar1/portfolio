@@ -11,7 +11,27 @@
   background: var(--bg-card);
   transition: transform 0.3s, border-color 0.3s;
 }
+.skill-card {
+  position: relative;
+  overflow: hidden;
+}
 .skill-card:hover { transform: translateY(-4px); border-color: var(--accent); }
+
+.skill-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(105deg, transparent 40%, rgba(200, 255, 0, 0.03) 45%, rgba(200, 255, 0, 0.06) 50%, rgba(200, 255, 0, 0.03) 55%, transparent 60%);
+  background-size: 200% 100%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  border-radius: 16px;
+}
+.skill-card:hover::after {
+  opacity: 1;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
 
 .skill-icon {
   width: 44px;

@@ -1,6 +1,7 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Stats from './components/Stats'
+import DropMessage from './components/DropMessage'
 import Experience from './components/Experience'
 import Skills from './components/Skills'
 import Education from './components/Education'
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <Hero />
       <Stats />
+      <DropMessage />
       <Experience />
       <Skills />
       <Education />

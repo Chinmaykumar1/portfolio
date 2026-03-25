@@ -1,0 +1,259 @@
+/* ── Strip container ── */
+.drop-strip {
+  position: relative;
+  max-width: 700px;
+  margin: 0 auto 5rem;
+  border-radius: 16px;
+  padding: 2px;
+  background: var(--border);
+  transition: all 0.4s ease;
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards 1.2s;
+}
+
+/* Animated gradient border */
+.drop-strip-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--accent), transparent 40%, transparent 60%, var(--accent));
+  background-size: 300% 300%;
+  animation: borderGlow 4s ease infinite;
+  opacity: 0;
+  transition: opacity 0.4s;
+  pointer-events: none;
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.drop-strip:hover .drop-strip-glow,
+.drop-strip--open .drop-strip-glow {
+  opacity: 1;
+}
+
+@keyframes borderGlow {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ── Collapsed trigger ── */
+.drop-trigger {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
+  background: var(--bg-card);
+  border: none;
+  border-radius: 14px;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.drop-trigger:hover {
+  background: var(--bg-card-hover);
+}
+
+.drop-trigger-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background: var(--accent-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.drop-trigger-text {
+  flex: 1;
+  text-align: left;
+}
+
+.drop-trigger-arrow {
+  color: var(--accent);
+  font-size: 1.1rem;
+  transition: transform 0.3s;
+}
+
+.drop-trigger:hover .drop-trigger-arrow {
+  transform: translateX(4px);
+}
+
+/* ── Expanded form ── */
+.drop-inline {
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 1.25rem 1.5rem;
+  position: relative;
+  z-index: 1;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.drop-input {
+  width: 100%;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 0.85rem 1rem;
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  line-height: 1.6;
+  resize: none;
+  transition: border-color 0.3s;
+}
+
+.drop-input::placeholder {
+  color: var(--text-dim);
+}
+
+.drop-input:focus {
+  outline: none;
+  border-color: rgba(200, 255, 0, 0.3);
+}
+
+.drop-input:disabled {
+  opacity: 0.6;
+}
+
+/* ── Actions row ── */
+.drop-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+  gap: 0.75rem;
+}
+
+.drop-hint {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  color: var(--text-dim);
+}
+
+.drop-hint kbd {
+  display: inline-block;
+  padding: 0.1rem 0.35rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: var(--mono);
+  font-size: 0.62rem;
+}
+
+.drop-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.drop-cancel {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  color: var(--text-muted);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.drop-cancel:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
+.drop-submit {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.25rem;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  border-radius: 100px;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.drop-submit:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.drop-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Success state ── */
+.drop-success {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  padding: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--accent);
+  animation: slideDown 0.3s ease;
+}
+
+.drop-strip--sent {
+  box-shadow: 0 0 30px rgba(200, 255, 0, 0.08);
+}
+
+/* ── Spinner ── */
+.drop-spinner {
+  width: 12px;
+  height: 12px;
+  border: 2px solid transparent;
+  border-top-color: var(--bg);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .drop-strip {
+    margin: 0 1.25rem 4rem;
+  }
+
+  .drop-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .drop-hint {
+    text-align: center;
+  }
+
+  .drop-btns {
+    justify-content: flex-end;
+  }
+}
